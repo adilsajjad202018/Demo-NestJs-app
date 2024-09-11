@@ -15,7 +15,7 @@
 # CMD [ "npm", "start" ]
 
 # Use Node.js 20 LTS version for stability and security
-FROM node:20-alpine
+FROM node:21-alpine
 
 # Set environment variables for production
 ENV NODE_ENV=production
