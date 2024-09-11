@@ -26,8 +26,11 @@ WORKDIR /app
 # Copy only package.json and package-lock.json for installing dependencies
 COPY package*.json ./
 
-# Install only production dependencies for smaller image size
+# Install production dependencies
 RUN npm ci --only=production
+
+# Install NestJS CLI globally
+RUN npm install -g @nestjs/cli
 
 # Copy the rest of the application code
 COPY . .
