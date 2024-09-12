@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "jest", "babel__core", "babel__generator", "babel__template", "json-schema"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
@@ -16,7 +17,6 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "types": ["node", "jest", "babel__core", "babel__generator", "babel__template", "json-schema" ]
+    "noFallthroughCasesInSwitch": false
   }
 }
