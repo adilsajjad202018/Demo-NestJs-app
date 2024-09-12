@@ -162,11 +162,10 @@ jobs:
   
   owasp-zap:
     runs-on: ubuntu-latest
-    needs: snyk
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-    
+
       # Build the Docker image for the app
       - name: Build Docker image
         run: docker build -t nestjs-app .
@@ -179,9 +178,9 @@ jobs:
       - name: Start app in Docker
         run: docker run -d --network zap-network --name nestjs-app -p 3000:3000 nestjs-app
 
-      # Add wait time to ensure the app is running
+      # Wait for the app to be fully up and running
       - name: Wait for the app to be ready
-        run: sleep 20  # Increase the wait time if necessary
+        run: sleep 30
 
       # Pull the latest OWASP ZAP Docker image from GitHub Container Registry
       - name: Pull OWASP ZAP Docker image
