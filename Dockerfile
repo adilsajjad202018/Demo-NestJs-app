@@ -51,7 +51,7 @@
 FROM node:21-alpine
 
 # Set environment variables for production
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 
 # Set the working directory in the container
 WORKDIR /app
@@ -60,7 +60,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install both production and development dependencies
-RUN npm install --only=development
+RUN npm install
 
 # Install NestJS CLI globally
 RUN npm install -g @nestjs/cli
@@ -79,3 +79,5 @@ USER node
 
 # Run the application
 CMD ["npm", "run", "start:prod"]
+
+
