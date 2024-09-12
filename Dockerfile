@@ -47,7 +47,7 @@
 # # Run the application
 # CMD ["npm", "run", "start:prod"]
 
-# Use Node.js 20 LTS version for stability and security
+# Use Node.js 21 version for building
 FROM node:21-alpine
 
 # Set environment variables for production
@@ -59,8 +59,8 @@ WORKDIR /app
 # Copy only package.json and package-lock.json for installing dependencies
 COPY package*.json ./
 
-# Install production dependencies
-RUN npm install
+# Install both production and development dependencies
+RUN npm install --only=development
 
 # Install NestJS CLI globally
 RUN npm install -g @nestjs/cli
