@@ -173,6 +173,9 @@ jobs:
     # Run the Docker container with the app
         - name: Start app in Docker
           run: docker run -d -p 3000:3000 nestjs-app
+    # Add wait time to ensure the app is running
+        - name: Wait for the app to be ready
+          run: sleep 15  # Wait for 15 seconds for the app to start
 
     # Pull the latest OWASP ZAP Docker image from GitHub Container Registry
         - name: Pull OWASP ZAP Docker image
