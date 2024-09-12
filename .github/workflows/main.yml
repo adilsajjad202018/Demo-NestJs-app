@@ -188,16 +188,16 @@ jobs:
         run: docker pull ghcr.io/zaproxy/zaproxy:latest
 
       # Run OWASP ZAP scan using the pulled image within the same network
-      - name: OWASP ZAP Scan
+      - name: Run OWASP ZAP Scan
         run: |
-           docker run -t --rm \
-           --network zap-network \
-           -v $(pwd):/zap/wrk:rw \
-           -u zap \
-           ghcr.io/zaproxy/zaproxy:latest \
-           zap-full-scan.py \
-           -t http://host.docker.internal:3000 \
-           -r zap_report.html
+         docker run -t --rm \
+         --network zap-network \
+         -v $(pwd):/zap/wrk:rw \
+         -u zap \
+         ghcr.io/zaproxy/zaproxy:latest \
+         zap-full-scan.py \
+         -t http://nestjs-app:3000 \
+         -r zap_report.html
     
 
       # Stop the running app container after the scan
