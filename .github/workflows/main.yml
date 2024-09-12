@@ -159,6 +159,7 @@ jobs:
         run: snyk monitor
 
   # OWASP ZAP Dynamic Application Security Testing (DAST)
+  
   owasp-zap:
     runs-on: ubuntu-latest
     needs: snyk
