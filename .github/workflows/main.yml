@@ -189,7 +189,7 @@ jobs:
            -u zap \
            ghcr.io/zaproxy/zaproxy:latest \
            zap-full-scan.py \
-           -t http://localhost:3000 \
+           -t http://host.docker.internal:3000 \
            -r zap_report.html
 
     # Stop the running app container after the scan
