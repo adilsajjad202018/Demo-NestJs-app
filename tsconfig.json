@@ -17,6 +17,6 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "types": ["node", "jest", "babel__core", "babel__generator", "babel__template", "json-schema"]
+    "types": ["node", "jest", "babel__core", "babel__generator", "babel__template", "json-schema" ]
   }
 }
