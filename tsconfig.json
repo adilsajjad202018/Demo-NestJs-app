@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "types": ["node", "jest", "babel__core", "babel__generator", "babel__template", "json-schema"],
-    "typeRoots": ["./node_modules/@types"],
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,
