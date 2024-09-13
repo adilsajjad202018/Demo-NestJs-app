@@ -59,8 +59,8 @@ WORKDIR /app
 # Copy only package.json and package-lock.json for installing dependencies
 COPY package*.json ./
 
-# Install both production and development dependencies
-RUN npm install
+# Install npm-force-resolutions to resolve conflicts
+RUN npm install && npx npm-force-resolutions && npm install --legacy-peer-deps
 
 # Install NestJS CLI globally
 RUN npm install -g @nestjs/cli
@@ -79,5 +79,3 @@ USER node
 
 # Run the application
 CMD ["npm", "run", "start:prod"]
-
-
