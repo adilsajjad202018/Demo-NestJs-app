@@ -211,9 +211,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.organization="adilsajjad202018"
-            -Dsonar.projectKey="Demo-NestJs-app"
-            -Dsonar.branch.name="main"
+            -Dsonar.organization=adilsajjad202018
+            -Dsonar.projectKey=Demo-NestJs-app
+            -Dsonar.branch.name=main
               
   owasp-zap:
     runs-on: ubuntu-latest
