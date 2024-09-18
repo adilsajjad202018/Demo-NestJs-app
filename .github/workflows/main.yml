@@ -212,7 +212,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization=adilsajjad202018
-            -Dsonar.projectKey=adilsajjad202018_Demo-NestJs-app
+            -Dsonar.projectKey=Demo-NestJs-app
             -Dsonar.branch.name=main
               
   owasp-zap:
