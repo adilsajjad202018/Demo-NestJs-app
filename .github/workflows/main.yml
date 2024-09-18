@@ -136,27 +136,27 @@ jobs:
       - name: Run tests
         run: npm run test
 
-#   # Snyk Dependency Scanning
-#   snyk:
-#     runs-on: ubuntu-latest
-#     needs: test
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: '21'
-#       - name: Install Snyk
-#         run: npm install -g snyk
-#       - name: Authenticate Snyk
-#         env:
-#           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-#         run: snyk auth ${{ secrets.SNYK_TOKEN }}
-#       - name: Run Snyk to check for vulnerabilities
-#         run: snyk test --all-projects --severity-threshold=medium
-#       - name: Monitor for new vulnerabilities
-#         run: snyk monitor
+  # Snyk Dependency Scanning
+  snyk:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'
+      - name: Install Snyk
+        run: npm install -g snyk
+      - name: Authenticate Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+      - name: Run Snyk to check for vulnerabilities
+        run: snyk test --all-projects --severity-threshold=medium
+      - name: Monitor for new vulnerabilities
+        run: snyk monitor
 
   # OWASP ZAP Dynamic Application Security Testing (DAST)
   # sonarqube:
