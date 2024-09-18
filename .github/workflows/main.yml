@@ -195,6 +195,25 @@ jobs:
   #           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
 
+
+
+  # sonarcloud:
+  #   name: SonarCloud
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+  #     - name: SonarCloud Scan
+  #       uses: SonarSource/sonarcloud-github-action@master
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}  # Needed to get PR information, if any
+  #         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+
+
+
+
   
   SonarCloud:
     runs-on: ubuntu-latest
@@ -212,7 +231,7 @@ jobs:
         with:
           args: >
             -Dsonar.organization=adilsajjad202018
-            -Dsonar.projectKey=Demo-NestJs-app
+            -Dsonar.projectKey=adilsajjad202018_Demo-NestJs-app
             -Dsonar.branch.name=main
               
   owasp-zap:
