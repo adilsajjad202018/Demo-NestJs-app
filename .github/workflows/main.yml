@@ -333,4 +333,7 @@ jobs:
 
     - name: Deploy to Server
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.EC2_PUBLIC_IP }} 'cd ${{ secrets.DEPLOY_PATH }} && ./deploy_script.sh'
+        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@18.209.59.157 'cd ${{ secrets.DEPLOY_PATH }} && ./deploy_script.sh'
+
+
+        
